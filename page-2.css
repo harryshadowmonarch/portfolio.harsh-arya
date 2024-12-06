@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Times New Roman', Times, serif;
+   
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color:black;
+    color:white;
+    
+}
+
+header {
+    margin-top: 2vw;
+    padding: 1rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    color: white;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    font-size: 1.8rem;
+    margin-left: 4rem;
+    font-weight: 700;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    color: white;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--hover-color);
+    border-bottom: 3px solid transparent; /* Adjust if needed */
+    color: rgb(0, 132, 255)     ;
+}
+
+@media (max-width: 895px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        padding: 1rem;
+        background-color: #161616;
+        border-left: 3px solid red;
+        border-bottom: 3px solid red;
+        border-bottom-left-radius: 2rem;
+    }
+    nav.active {
+        display: block;
+    }
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+}
+
+section.home{
+    min-height: 70vh;
+    padding: 5rem 9%;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: var(--background-color);
+}
+
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content p {
+    font-size: 1.7rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid var(--primary-color);
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: red;
+}
+
+.social-icons a:hover {
+    color: black;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 25px #b74b4b;
+    transform: scale(1.3) translateY(-5px);
+    background-color: red;
+}
+
+.btn {
+    display: inline-flex;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #ffffff;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid var(--secondary-color);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    background-color: #b74b4b;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+    background-color: var(--secondary-color);
+    color: rgb(7, 5, 5);
+    background-color: red;
+    box-shadow: 0 0 25px var(--secondary-color);
+}
+
+
+/* Styles for additional sections */
+.intro,  .skills1, .personal, .achievements, .contact {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 9rem 7%;
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+.intro h2, .skills1 h3, .personal h3, .achievements h3, .contact h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.intro p
+{
+    font-size: 1.6rem;
+    text-align: justify;
+    line-height: 1.8;  
+} 
+.personal{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+.skills1 ul, .personal p, .achievements ul, .contact p {
+    font-size: 1.6rem;
+    line-height: 2.2;
+}
+
+.skills ul, .achievements ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.skills li, .achievements li {
+    margin: 1rem 0;
+}
+
+.contact button {
+    margin-top: 2rem;
+}
+.skills{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  
+  }
+  /* Stylingthe last h2 tag by giving margin bottom */
+  .progress-bar-container:not(:last-child) {
+    margin-bottom: 50px;
+  }
+  
+  /* Styling the h2 tag by giving color, 
+        letter spacing, font-size etc.*/
+  .progress-bar-container h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 20px;
+
+  }
+  
+  /* Styling the border and box
+        effect of the progress bar*/
+  .progress-bar {
+    width: 800px;
+    height: 5px;
+    margin-top: 10px;
+    border: 1px solid #565656;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(80, 255, 211);
+  }
+  
+  /* Stylingthe background color of each 
+        animation and border radius */
+  .percentage {
+    display: block;
+    height: 100%;
+    background-color: rgb(82, 128, 254);
+    border-radius: 5px;
+    animation: progress 1500ms ease-in 1;
+  }
+  
+  /* Assigning width of each languages*/
+  .c {
+    width: 85%;
+  }
+  
+  .python {
+    width: 55%;
+  }
+  
+  .html {
+    width: 75%;
+  }
+  
+  .css {
+    width: 65%;
+  }
+  
+  .javascript {
+    width: 55%;
+  }
+  
+  /* Animating the progress bar by 
+        initially starting from 0*/
+  @keyframes progress {
+    from {
+      width: 0;
+    }
+  }
+  
+footer {
+    background-color: #161616; /* Dark background for the footer */
+    color: var(--text-color); /* Text color */
+    padding: 2rem 9%; /* Padding for spacing */
+    text-align: center; /* Center align text and icons */
+    position: relative; /* Position relative for potential absolute children */
+}
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes words {
+    0%, 50% {
+        content: "Web Developer";
+    }
+    50%, 100% {
+        content: "Software Developer";
+    }
+}
+
+@media (max-width: 1000px) {
+    .home {
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 895px) {
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+    .home .home-content h3 {
+        font-size: 2.5rem;
+    }
+    .home-content h1 {
+        font-size: 5rem;
+    }
+    .home-img img {
+        margin-top: 4rem;
+        width: 70vw;
+    }
+}

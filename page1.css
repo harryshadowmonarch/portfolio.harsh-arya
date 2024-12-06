@@ -1,0 +1,263 @@
+:root {
+    --primary-color: red;
+    --secondary-color: #b74b4b;
+    --background-color: black;
+    --text-color: white;
+    --hover-color: rgb(0, 132, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    margin-top: 2vw;
+    padding: 1rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    color: white;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    font-size: 1.8rem;
+    margin-left: 4rem;
+    font-weight: 700;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    color: white;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--hover-color);
+    border-bottom: 3px solid transparent; /* Adjust if needed */
+}
+
+@media (max-width: 895px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        padding: 1rem;
+        background-color: #161616;
+        border-left: 3px solid red;
+        border-bottom: 3px solid red;
+        border-bottom-left-radius: 2rem;
+    }
+    nav.active {
+        display: block;
+    }
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9%;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: var(--background-color);
+}
+
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom : 1rem;
+    font-weight : 700;
+}
+
+.home-content p {
+    font-size: 1.7rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: transparent;
+    border: 0.2rem solid var(--primary-color);
+    font-size: 2rem;
+    border-radius: 50%;
+    margin: 3rem 1.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: var(--text-color);
+}
+
+.social-icons a:hover {
+    color: black;
+    background-color: var(--primary-color);
+    box-shadow: 0 0 25px #b74b4b;
+    transform: scale(1.3) translateY(-5px);
+}
+
+.btn {
+    display: inline-flex;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #ffffff;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid var(--secondary-color);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+    background-color: var(--secondary-color);
+    color: rgb(7, 5, 5);
+    box-shadow: 0 0 25px var(--secondary-color);
+}
+
+.typing-text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+    color: #fb0f0f;
+}
+
+.typing-text::after {
+    content: "|";
+    animation: cursor-blink 0.6s infinite;
+    color: #fb0f0f;
+    margin-left: 4px;
+}
+
+.typing-text::before {
+    content: "Web Developer";
+    animation: words 6s steps(1) infinite;
+}
+footer {
+    background-color: #161616; /* Dark background for the footer */
+    color: var(--text-color); /* Text color */
+    padding: 2rem 9%; /* Padding for spacing */
+    text-align: center; /* Center align text and icons */
+    position: relative; /* Position relative for potential absolute children */
+}
+
+.codepen {
+    width: 100%; /* Ensure it takes the full width of its container */
+    max-width: 800px; /* Set a maximum width for larger screens */
+    margin: 2rem auto; /* Center the CodePen embeds with space around them */
+    border: 2px solid var(--primary-color); /* Use your primary color for the border */
+    border-radius: 1rem; /* Rounded corners for a softer look */
+    overflow: hidden; /* Ensure no overflow from the container */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.codepen:hover {
+    transform: scale(1.02); /* Slightly scale up on hover for emphasis */
+}
+
+.codepen p {
+    padding: 1rem; /* Add some padding around the text */
+    text-align: center; /* Center the text */
+    font-size: 1.5rem; /* Adjust font size for readability */
+    color: var(--text-color); /* Use the text color defined in variables */
+}
+
+.codepen a {
+    color: var(--hover-color); /* Use your hover color for links */
+    text-decoration: underline; /* Underline links for better visibility */
+}
+
+.codepen a:hover {
+    color: var(--secondary-color); /* Change color on hover for links */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+    .codepen {
+        max-width: 100%; /* Allow full width on smaller screens */
+        margin: 1rem; /* Reduce margin for smaller devices */
+    }
+
+    .codepen p {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+    }
+}
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes words {
+    0%, 50% {
+        content: "Web Developer";
+    }
+    50%, 100% {
+        content: "Software Developer";
+    }
+}
+
+@media (max-width: 1000px) {
+    .home {
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 895px) {
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+    .home .home-content h3 {
+        font-size: 2.5rem;
+    }
+    .home-content h1 {
+        font-size: 5rem;
+    }
+    .home-img img {
+        margin-top: 4rem;
+        width: 70vw;
+    }
+}
